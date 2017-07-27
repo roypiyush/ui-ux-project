@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+	function dashboard() {
+		$("#dashboard").click(myfunc)
+	}
+	function myfunc(){
+		$(this).tab('show');
+	}
+	$(function(){
+		$(".nav-tabs a").click(myfunc);
+	});
+	</script>
+
+	<script>
+		var app = angular.module('table_module', []);
+		app.controller('your_blog_controller', function($scope) {
+			$scope.your_blogs = [];
+			$scope.friend_data = [];
+			for(var i=0 ; i<10; i++) {
+				$scope.your_blogs[i] = {"id": "piyush2k13", "blog": "some blogs"};
+				$scope.friend_data[i] = {"id": "friend_id_1234", "blog": "some blogs"};
+			}
+		});
+	</script>
+	
+</head>
+<body ng-app="table_module" ng-controller="your_blog_controller">
+	<!-- Features -->
+	<!-- Modal content-->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Profile Information</h4>
+				</div>
+				<div id="modal_contents" class="modal-body">
+					<!-- <object type="text/html" data="https://www.w3schools.com"></object> -->
+					<p>Some text in the modal.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--  Functional Body part -->
+	<div class="container center thin_border" style="margin-top:10px">
+		<div class="dropdown" style="margin-left:92%;">
+			<span>
+				<a onClick="dashboard()" href="#" style="padding:10px;" class="glyphicon glyphicon-home"></a>
+				<a href="#" class="glyphicon glyphicon-th-list dropdown-toggle" data-toggle="dropdown"></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Settings</a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</span>
+		</div>
+	</div>
+	<div class="container center thin_border" style="margin-top:10px">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#dashboard">Dashboard</a></li>
+			<li><a href="#your-blogs">Your Blogs</a></li>
+			<li><a href="#friends">Friends</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="dashboard" class="tab-pane fade in active">
+				<h1>Dashboard</h1>
+				<p>Try to scroll this page and look at the navigation bar while scrolling!</p>
+			</div>
+			<div id="your-blogs" class="tab-pane fade">
+				<h1>Your Blogs</h1>
+				<table class="table" style="width:100%;">
+					<tbody class="light_color">
+						<tr ng-repeat="d in your_blogs">
+						    <td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ d.id }}</a></label></td>
+							<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ d.blog }}</a></label></td>
+							<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="friends" class="tab-pane fade">
+				<h1>Friends</h1>
+				<table class="table" style="width:100%;">
+					<tbody class="light_color">
+						<tr ng-repeat="dd in friend_data">
+						    <td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ dd.id }}</a></label></td>
+							<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ dd.blog }}</a></label></td>
+							<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

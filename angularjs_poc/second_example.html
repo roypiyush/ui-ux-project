@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+
+<body>
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+    $scope.names = ["Emil", "Tobias", "Linus"];
+  });
+  $scope.myHeader = "Hello Piyush!";
+  $timeout(function () {
+        $scope.myHeader = "How are you today?";
+  }, 2000);
+  app.controller('myCtrl', function($scope) {
+    $scope.count = 0;
+  });
+</script>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="myCol='lightblue'; person={firstName:'John',lastName:'Doe'; points=[1,15,19,2,40]}">
+	<p>{{myHeader}}</p>
+  <p>Name: <input type="text" ng-model="name" placeholder='Enter your name'></p>
+  <p ng-bind="name"></p>
+  <p>The name is <span ng-bind="firstName"></span></p>
+  <p>My first expression: {{ 5 + 5 }}</p>
+  First Name: <input type="text" ng-model="firstName"><br>
+  Last Name: <input type="text" ng-model="lastName"><br>
+  <br>
+  Full Name: {{firstName + " " + lastName}}
+  <br/>
+  <input class='w3-input' style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+  <p>The name [Object] is {{ person.firstName + " " + person.lastName }}</p>
+  <p>Array Demo -&gt; The third result is {{ points[2] }}</p>
+  <p>Array Demo using span -&gt; The third result is <span ng-bind="points[2]"></span></p>
+
+  <div>
+    <ul>
+      <p>ng-repeat demo</p>
+      <ul>
+      <li style="color:blue" ng-repeat="x in names">{{x | uppercase}}</li>
+      <li style="color:red" ng-repeat="x in names">{{x | lowercase}}</li>
+      <li style='color:green' ng-repeat="x in names">{{x}}</li>
+    </ul>
+  </div>
+  <div>
+    <h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
+    <h2>{{ count }}</h2>
+  </div>
+  <form>
+    Select a topic:
+    <select ng-model="myVar">
+      <option value="">
+      <option value="dogs">Dogs
+      <option value="tuts">Tutorials
+      <option value="cars">Cars
+    </select>
+  </form>
+
+  <div class='w3-container' ng-switch="myVar">
+    <div ng-switch-when="dogs">
+      <h1>Dogs</h1>
+      <p>Welcome to a world of dogs.</p>
+    </div>
+    <div ng-switch-when="tuts">
+      <h1>Tutorials</h1>
+      <p>Learn from examples.</p>
+    </div>
+    <div ng-switch-when="cars">
+      <h1>Cars</h1>
+      <p>Read about cars.</p>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
