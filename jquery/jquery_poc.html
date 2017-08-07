@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .bar {
+                display: inline-block;
+                width: 20px;
+                height: 75px;   
+                margin-right: 2px;
+                background-color: teal;
+            }
+        </style>
         <script src="jquery-3.2.1.min.js"></script>
         <script>
             $(function() {
-                $("#text1").on("keyup", function(){
-                    console.log($(this).html());
-                    $("#output").html($(this).val());
-                }); 
+                $("#text1, #text2").on("keyup", function(){
+                    var v1 = $("#text1").val();
+                    var v2 = $("#text2").val();
+                    var output = undefined;
+                    if($.isNumeric(v1) && $.isNumeric(v2)) {
+                        $("#mydiv").animate(
+                            {
+                                height: parseInt(v1) + "px",
+                                width: parseInt(v2) + "px",
+                            }
+                        );
+                        output = parseFloat(v1) * parseFloat(v2);
+                    }
+                    else {
+                        output = v1 + " " + v2;
+                    }
+                    $("#output").html(output);
+                });
+
+                function gen_tower() {
+                    var rand =  parseInt(Math.random() * 100);
+                    var string1 = "<div style='height: ";
+                    var styles = rand + "px; width:10px; margin-right:1px;background-color: black;display: inline-block;'>";
+                    var string2 = "</div>";
+                    return  string1 + styles + string2;
+                }
+
+                var interval = undefined;
+                $("#gentowers").click(function(){
+                    var myfunc = function() {
+                        $("#towers").prepend(gen_tower());
+                    }
+                    interval = setInterval(myfunc, 500);
+                });
+                $("#stopgentowers").click(function(){  	
+                    clearTimeout(interval);
+                });
+
             });
         </script>
     </head>
     <body>
-        <input type="text" id="text1" placeholder="Enter Something" />
+        <input type="text" id="text1" placeholder="Enter height" />
+        <input type="text" id="text2" placeholder="Enter width" />
+        <button id="gentowers">Generate Towers</button>
+        <button id="stopgentowers">Stop Generating Towers</button>
+        <div id='towers'>
+        </div>
         <p id="output" />
+        <div id='mydiv' class="bar"/>
     </body>
 </html>
