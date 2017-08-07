@@ -1,0 +1,89 @@
+    <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <style type="text/css">
+            div.bar {
+                display: inline-block;
+                width: 20px;
+                height: 75px;   /* We'll override this later */
+                margin-right: 2px;
+                background-color: teal;
+            }
+        </style>
+        <script type="text/javascript" src="../d3.v3.js"></script>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            var dataset = [ 5, 10, 15, 20, 25 ];
+
+            d3.select("body").selectAll("p")
+            .data(dataset)
+            .enter()
+            .append("p")
+            .text("New paragraph!");
+
+            d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", function(d) {
+                var barHeight = Math.random() * d * 5;
+                return barHeight + "px";
+            });
+
+            var w = 500;
+            var h = 500;
+            var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+            var circles = svg.selectAll("circle")
+            .data(dataset)
+            .enter()
+            .append("circle");
+            circles.attr("cx", function(d) {
+                return d + (d * 10);
+            })
+           .attr("cy", h/2)
+           .attr("r", function(d) {
+                return d;
+            })
+           .attr("fill", "blue");
+
+        </script> 
+        <svg viewBox="0 0 1000 300">
+          <defs>
+            <path id="MyPath"
+                  d="M 100 200 
+                     C 200 100 300   0 400 100
+                     C 500 200 600 300 700 200
+                     C 800 100 900 100 900 100" />
+          </defs>
+          <text font-family="Verdana" font-size="42.5">
+            <textPath xlink:href="#MyPath">
+              We go up, then we go down, then up again
+            </textPath>
+          </text>
+
+        
+            <defs>
+          <path id="MyPath" d="M80,20 l-75,100" />
+          <path id="MyPath" d="M5,120 l75,-100" />
+          </defs>
+          Sorry, your browser does not support inline SVG.
+          <text font-family="Verdana" font-size="7.29">
+            <textPath xlink:href="#MyPath">
+              We go up, then we go down, then up again
+            </textPath>
+          </text>
+          <circle id="c" cx="175" cy="20" r="1" />
+
+        </svg>
+
+    </body>
+</html>     
+

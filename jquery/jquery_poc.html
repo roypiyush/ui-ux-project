@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>
+            $(function() {
+                $("#text1").on("keyup", function(){
+                    console.log($(this).html());
+                    $("#output").html($(this).val());
+                }); 
+            });
+        </script>
+    </head>
+    <body>
+        <input type="text" id="text1" placeholder="Enter Something" />
+        <p id="output" />
+    </body>
+</html>
