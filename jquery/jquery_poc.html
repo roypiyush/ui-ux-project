@@ -4,15 +4,42 @@
         <style>
             .bar {
                 display: inline-block;
-                width: 20px;
-                height: 75px;   
-                margin-right: 2px;
-                background-color: teal;
+                width: 26px;
+                height: 12px;
+                border-top-color: black;
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-bottom-color: black;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                margin-bottom: 0px;
+                overflow: auto;
             }
         </style>
         <script src="jquery-3.2.1.min.js"></script>
         <script>
             $(function() {
+
+                function animate_music_bar(barId) {
+                    var height_random = Math.random() * 20;
+                    $(barId).animate({
+                        height: height_random + "px",
+                    }, 1000);
+                    $(barId).css({
+                        "width": "5px",
+                        'background-color': 'teal',
+                        "margin-right": "1px",
+                        "display": "inline-block",
+                    });
+                }
+                
+                var music = function() {
+                    animate_music_bar("#music1");
+                    animate_music_bar("#music2");
+                    animate_music_bar("#music3");
+                }
+                setInterval(music, 1000);
+
                 $("#text1, #text2").on("keyup", function(){
                     var v1 = $("#text1").val();
                     var v2 = $("#text2").val();
@@ -62,6 +89,10 @@
         <div id='towers'>
         </div>
         <p id="output" />
-        <div id='mydiv' class="bar"/>
+        <div id='music' class="bar">
+            <div id='music1' ></div>
+            <div id='music2' ></div>
+            <div id='music3' ></div>
+        </div>
     </body>
 </html>
