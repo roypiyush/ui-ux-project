@@ -30,13 +30,29 @@
             .attr("id", "visualization")
             .attr("xmlns", "http://www.w3.org/2000/svg");
 
-        var data = d3.range(11).map(function () { return Math.random() * 10 })
-        var x = d3.scale.linear().domain([0, 10]).range([0, 700]);
-        var y = d3.scale.linear().domain([0, 10]).range([10, 290]);
+        var data = [{x: 651, y: 280}, {x: 40, y: 20}, {x: 99, y: 100}, {x: 150, y: 200}];
+        
+        var circles = svg.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle");
+            circles.attr("cx", function(d) {
+                return d.x;
+            })
+           .attr("cy", function(d) {
+               return d.y;
+           })
+           .attr("r", 3)
+           .attr("fill", "blue");
+           
         var line = d3.svg.line()
             .interpolate("cardinal")
-            .x(function (d, i) { return x(i); })
-            .y(function (d) { return y(d); })
+            .x(function (d, i) { 
+                return d.x; 
+            })
+            .y(function (d, i) {
+                return d.y; 
+            })
 
         var path = svg.append("path")
             .attr("d", line(data))
@@ -50,7 +66,7 @@
             .attr("stroke-dasharray", totalLength + " " + totalLength)
             .attr("stroke-dashoffset", totalLength)
             .transition()
-            .duration(2000)
+            .duration(6000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
 
