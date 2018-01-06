@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Express App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://localhost:8080/css/bootstrap.min.css" />
+    <script src="http://localhost:8080/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>Add Customer</h1>
+    <% if(errors != undefined) { %>
+        <% errors.forEach(function(error){ %>
+            <li><%= error.msg %></li>
+        <% }) %>
+    <% } %>
+    <form method="POST" action="/user/add">
+        <div class="form-group">
+            <label>First name</label>
+            <input type="text" name="fname" />
+        </div>
+        <div class="form-group">
+            <label>Last name</label>
+            <input type="text" name="lname" />
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul>
+        <% users.forEach(function(user){ %>
+            <li>
+                <%= user.fname %> <%= user.lname %> <%= user.email %>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

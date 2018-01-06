@@ -4,65 +4,18 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="w3.css">
 </head>
-<body style="background-color: #85c1e9;">
-	<div id='div_1' class="container center thin_border">
-		<h1 class="text-center">Blog Your Mind</h1>
-	</div>
-	<div id='div_2' class="row center thin_border">
-		<div id='div_form_1' class="col-md-6">
-			<form>
-				<table class="table">
-					<tbody>
-						<tr>
-							<td style="width: 50%;"><label for="email">Email address:</label></td>
-							<td class="input-lg"><input type="email" class="form-control" id="email"></td>
-						</tr>
-						<tr>
-							<td><label for="label">First Name:</label></td>
-							<td class="input-lg"><input type="text" class="form-control" id="fname"></td>
-						</tr>
-						<tr>
-							<td><label for="label">Last Name:</label></td>
-							<td class="input-lg"><input type="text" class="form-control" id="lname"></td>
-						</tr>
-						<tr>
-							<td><label for="label">Password:</label></td>
-							<td class="input-lg"><input type="password" class="form-control" id="pass"></td>
-						</tr>
-						<tr>
-							<td><label for="label">Re-enter Password:</label></td>
-							<td class="input-lg"><input type="password" class="form-control" id="rpass"></td>
-						</tr>
-						<tr>
-							<td colspan="2"><button type="submit" class="btn" style="margin-left:25%; width:50%;">Login/Submit</button></td>
-						</tr>
-					</tbody>
-				</table>
-			</form>
+<body>
+	<div class="form">
+		<div class="form-field">
+			<label>Username or Email</label>
+			<input type="text" class="form-control" id="fname">
 		</div>
-		<div id='div_form_2' class="col-md-6 jumbotron">
-			<h1>Express Your Thoughts</h1>
-			<p>There is whole world willing to listen to wonderful stories, imaginations and ideas. Let your brain loose and express its contents.</p>
+		<div class="form-field">
+			<label>Password</label>
+			<input type="password" class="form-control" id="fname">
 		</div>
-	</div>
-	<div id="div_3" class="row center thin_border">
-		<div class="col-md-4" style="text-align:center;">
-			<p><a href="#"><h4 style="text-decoration: underline;">Site</h4></a></p>
-			<p style="text-decoration: underline;"><a href="#">About Us</a></p>
-			<p style="text-decoration: underline;"><a href="#">Founders</a></p>
-			<p style="text-decoration: underline;"><a href="#">Philosophy</a></p>
-		</div>
-		<div class="col-md-4" style="text-align:center;">
-			<p><a href="#"><h4 style="text-decoration: underline;">Contact Us</h4></a></p>
-			<p style="text-decoration: underline;"><a href="#">Email</a></p>
-			<p style="text-decoration: underline;"><a href="#">Phone</a></p>
-			<p style="text-decoration: underline;"><a href="#">Fax</a></p>
-		</div>
-		<div class="col-md-4" style="text-align:center;">
-			<p><a href="#"><h4 style="text-decoration: underline;">Terms & Conditions</h4></a></p>
-		</div>
+		<button class="btn btn-success" style="width:100%;">Login</button>
 	</div>
 </body>
 </html>
