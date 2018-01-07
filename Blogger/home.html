@@ -9,19 +9,13 @@
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
-	$(document).ready(function(){
-	    $("#dashboard").hide();
-	    $("#your-blogs").hide();
-	    $("#friends").hide();
-	});
+		function show(id) {
+			$(id).css("display", "block");
+		}
 
-    function show(id) {
-		$(id).css("display", "block");
-    }
-
-	function hide(id) {
-		$(id).css("display", "none");
-	}
+		function hide(id) {
+			$(id).css("display", "none");
+		}
 
 	</script>
 	<script>
@@ -45,35 +39,54 @@
 			<li><a href="#your-blogs" onclick="hide('#dashboard'); show('#your-blogs'); hide('#friends')">Your Blogs</a></li>
 			<li><a href="#friends" onclick="hide('#dashboard'); hide('#your-blogs'); show('#friends')">Friends</a></li>
 		</ul>
-		<div class="tab-content">
-			<div id="dashboard" style="display: none;">
-				<h1>Dashboard</h1>
-				<p>Try to scroll this page and look at the navigation bar while scrolling!</p>
+		<div id="dashboard" class="navigation-bar-item container">
+			<div class="row" style="border: black solid 1px; position:relative">
+				<div class="col-sm-4">
+					<ul id="dashboard-features" style="list-style-type: none; margin:0; padding: 0;">
+						<li><a href="#">Write Blog</a></li>
+						<li><a href="#">Search Blog</a></li>
+						<li><a href="#">User Search</a></li>
+					</ul>	
+				</div>
+				<div class="col-sm-8">
+					<div>
+						Start Your Activity :)
+					</div>
+					<div style="display:none;">
+						Write Blog
+					</div>
+					<div style="display:none;">
+						Search Blog
+					</div>
+					<div style="display:none;">
+						User Search
+					</div>
+				</div>
 			</div>
-			<div id="your-blogs" style="display: none;">
-				<h1>Your Blogs</h1>
-				<table class="table" style="width:100%;">
-					<tbody class="light_color">
-						<tr ng-repeat="d in your_blogs">
-						    <td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ d.id }}</a></label></td>
-							<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ d.blog }}</a></label></td>
-							<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div id="friends" style="display: none;">
-				<h1>Friends</h1>
-				<table class="table" style="width:100%;">
-					<tbody class="light_color">
-						<tr ng-repeat="dd in friend_data">
-						    <td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ dd.id }}</a></label></td>
-							<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ dd.blog }}</a></label></td>
-							<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+		</div>
+		<div id="your-blogs"  class="navigation-bar-item" style="display: none;">
+			<h1>Your Blogs</h1>
+			<table class="table" style="width:100%;">
+				<tbody class="light_color">
+					<tr ng-repeat="d in your_blogs">
+						<td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ d.id }}</a></label></td>
+						<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ d.blog }}</a></label></td>
+						<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="friends" class="navigation-bar-item" style="display: none;">
+			<h1>Friends</h1>
+			<table class="table" style="width:100%;">
+				<tbody class="light_color">
+					<tr ng-repeat="dd in friend_data">
+						<td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ dd.id }}</a></label></td>
+						<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ dd.blog }}</a></label></td>
+						<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </body>

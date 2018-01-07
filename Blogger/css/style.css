@@ -74,17 +74,19 @@ ul.navigation-bar li {
 
 ul.navigation-bar li:hover {
 	background-color: rgb(172, 218, 252);
-	border-top: black solid 1px;
-	border-radius: 4px;
+	position: relative;
+	left: 10px;
 }
 
 
-li.navigation-bar a.navigation-bar:active {
-    display: block;
+li.navigation-bar a:hover {
 	text-decoration: none;
-	background-color: black;
-	border-top: black solid 1px;
-	border-left: black solid 1px;
-	border-right: black solid 1px;
-	border-radius: 4px;
+}
+
+.navigation-bar-item {
+	margin-top: 20px;
+	max-height: 50%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+	border-radius: 5px;
 }
