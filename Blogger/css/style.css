@@ -50,10 +50,41 @@ div.header {
 	display: inline-block;
 	width: 100%;
 	height: 75px;   /* We'll override this later */
-	background-color: dodgerblue;
+	background-color: rgb(52, 152, 219);
 }
 
 .mandatory:after { 
 	content:" *";
 	color: crimson;
+}
+
+ul.navigation-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+	border-bottom: black solid 1px;
+}
+
+ul.navigation-bar li {
+	display: inline;
+	text-align: center;
+	padding: 15px;
+}
+
+ul.navigation-bar li:hover {
+	background-color: rgb(172, 218, 252);
+	border-top: black solid 1px;
+	border-radius: 4px;
+}
+
+
+li.navigation-bar a.navigation-bar:active {
+    display: block;
+	text-decoration: none;
+	background-color: black;
+	border-top: black solid 1px;
+	border-left: black solid 1px;
+	border-right: black solid 1px;
+	border-radius: 4px;
 }
