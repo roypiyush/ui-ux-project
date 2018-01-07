@@ -2,32 +2,46 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div class="form">
-		<div class="form-field">
-			<label for="label">First Name</label>
-			<input type="text" class="form-control" id="fname">
+	<div class="header"></div>
+	<div class="form container" style="width: 40%;">
+		<h4 class="form-header">User Sign-Up</h4>
+		<div class="form-field row">
+			<label class="col-sm-6">First Name</label>
+			<input type="text" class="form-control col-sm-6" id="fname"/>
 		</div>
-		<div class="form-field">
-			<label for="label">Last Name</label>
-			<input type="text" class="form-control" id="fname">
+		<div class="form-field row">
+			<label class="col-sm-6">Last Name</label>
+			<input type="text" class="form-control col-sm-6" id="lname"/>
 		</div>
-		<div class="form-field">
-			<label for="label">Email</label>
-			<input type="text" class="form-control" id="fname">
+		<div class="form-field row">
+			<label class="mandatory col-sm-6">userid</label>
+			<input type="text" class="form-control col-sm-6" id="userid"/>
         </div>
-        <div class="form-field">
-            <label for="label">Password</label>
-            <input type="password" class="form-control" id="fname">
+		<div class="form-field row">
+			<label class="mandatory col-sm-6">Email</label>
+			<input type="email" class="form-control col-sm-6" id="email"/>
         </div>
-        <div class="form-field">
-            <label for="label">Re-Enter Password</label>
-            <input type="password" class="form-control" id="fname">
+        <div class="form-field row">
+            <label class="mandatory col-sm-6">Password</label>
+            <input type="password" class="form-control col-sm-6" id="pass"/>
         </div>
-	    <button class="btn btn-success" style="width:100%;">Sign Up</button>
+        <div class="form-field row">
+            <label class="mandatory col-sm-6">Re-Enter Password</label>
+            <input type="password" class="form-control col-sm-6" id="rpass"/>
+		</div>
+		<div class="row">
+			<button class="btn btn-success form-btn" style="width:40%; margin: auto;">Sign Up</button>
+		</div>
+	    
 	</div>
+	<ul class="about-us">
+		<li class="about-us"><a href="#">Terms &amp; Conditions</a></li>
+		<li class="about-us" style="margin-left: 8%;"><a href="#">Policy</a></li>
+		<li class="about-us" style="margin-left: 8%;"><a href="#">Contact Us</a></li>
+	</ul>
 </body>
 </html>

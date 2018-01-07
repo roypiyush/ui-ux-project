@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<div class="header"></div>
 	<div class="form">
+		<h4 class="form-header">User Login</h4>
 		<div class="form-field">
-			<label>Username or Email</label>
+			<label class="mandatory">Username or Email</label>
 			<input type="text" class="form-control" id="fname">
 		</div>
 		<div class="form-field">
-			<label>Password</label>
+			<label class="mandatory">Password</label>
 			<input type="password" class="form-control" id="fname">
 		</div>
-		<button class="btn btn-success" style="width:100%;">Login</button>
+		<button class="btn btn-success form-btn">Login</button>
 	</div>
+	<ul class="about-us">
+		<li class="about-us"><a href="#">Terms &amp; Conditions</a></li>
+		<li class="about-us" style="margin-left: 8%;"><a href="#">Policy</a></li>
+		<li class="about-us" style="margin-left: 8%;"><a href="#">Contact Us</a></li>
+	</ul>
+
 </body>
 </html>

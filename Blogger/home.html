@@ -3,18 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script>
-	function dashboard() {
-		$("#dashboard").click(myfunc)
-	}
 	function myfunc(){
 		$(this).tab('show');
 	}
+	function dashboard() {
+		$("#dashboard").click(myfunc);	
+	}
+	
 	$(function(){
 		$(".nav-tabs a").click(myfunc);
 	});
@@ -34,8 +35,7 @@
 	
 </head>
 <body ng-app="table_module" ng-controller="your_blog_controller">
-	<!-- Features -->
-	<!-- Modal content-->
+	<div class="header"></div>
 	<div class="modal fade" id="myModal" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -44,7 +44,6 @@
 					<h4 class="modal-title">Profile Information</h4>
 				</div>
 				<div id="modal_contents" class="modal-body">
-					<!-- <object type="text/html" data="https://www.w3schools.com"></object> -->
 					<p>Some text in the modal.</p>
 				</div>
 				<div class="modal-footer">
