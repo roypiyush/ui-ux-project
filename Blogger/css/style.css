@@ -69,17 +69,35 @@ ul.navigation-bar {
 }
 
 ul.navigation-bar li {
-	display: inline;
+	display: inline-block;
 	text-align: center;
-	padding: 15px;
+	width: 100px;
 	position: relative;
 }
 
 ul.navigation-bar li:hover, ul.navigation-bar li:hover a:hover {
-	background-color: rgb(219, 119, 52);
+	background-color: rgb(21, 139, 194);
 	text-decoration: none;
+	color: white;
 }
 
+ul.navigation-col {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.navigation-col li {
+	text-align: center;
+	margin: 30px;
+	position: relative;
+}
+
+ul.navigation-col li:hover, ul.navigation-col li:hover a:hover {
+	background-color: rgb(21, 139, 194);
+	text-decoration: none;
+	color: white;
+}
 
 .navigation-bar-item {
 	margin-top: 20px;
@@ -88,3 +106,5 @@ ul.navigation-bar li:hover, ul.navigation-bar li:hover a:hover {
 	background-color: white;
 	border-radius: 5px;
 }
+
+
