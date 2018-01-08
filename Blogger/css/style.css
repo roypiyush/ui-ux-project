@@ -75,8 +75,8 @@ ul.navigation-bar li {
 	position: relative;
 }
 
-ul.navigation-bar li:hover a:hover {
-	background-color: rgb(172, 218, 252);
+ul.navigation-bar li:hover, ul.navigation-bar li:hover a:hover {
+	background-color: rgb(219, 119, 52);
 	text-decoration: none;
 }
 
