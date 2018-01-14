@@ -63,7 +63,8 @@ div.header {
 ul.navigation-bar {
 	border-bottom: black solid 1px;
 	list-style-type: none;
-    overflow: hidden;
+	overflow: hidden;
+	margin-top: 5%;
 }
 
 ul.navigation-bar > li {
@@ -74,16 +75,14 @@ ul.navigation-bar > li {
 
 ul.navigation-bar > li > a {
 	display: inline-block;
-	width: 100px;
+	width: 120px;
+	padding: 8px;
 	border-left: 1px solid transparent;
 	border-right: 1px solid transparent;
 	border-top: 1px solid transparent;
 }
 
 ul.navigation-bar > li > a:hover {
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-	border-top: 1px solid black;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 	background-color: rgb(21, 139, 194);
@@ -99,18 +98,21 @@ ul.navigation-col {
 
 ul.navigation-col > li {
 	text-align: right;
-	position: relative;
 }
 
 ul.navigation-col > li > a {
 	display: block;
 	width: 100%;
+	padding: 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }
 
-ul.navigation-col > li > li:focus , ul.navigation-col > li:hover > a:hover {
+ul.navigation-col > li > a:hover {
 	background-color: rgb(21, 139, 194);
 	text-decoration: none;
 	color: white;
+
 }
 
 .navigation-bar-item {
