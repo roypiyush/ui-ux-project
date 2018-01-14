@@ -61,21 +61,31 @@ div.header {
 }
 
 ul.navigation-bar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-	overflow: hidden;
 	border-bottom: black solid 1px;
+	list-style-type: none;
+    overflow: hidden;
 }
 
-ul.navigation-bar li {
-	display: inline-block;
+ul.navigation-bar > li {
+	float: left;
 	text-align: center;
-	width: 100px;
-	position: relative;
+	padding: 0px 0px 0px 0px;
 }
 
-ul.navigation-bar li:hover, ul.navigation-bar li:hover a:hover {
+ul.navigation-bar > li > a {
+	display: inline-block;
+	width: 100px;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top: 1px solid transparent;
+}
+
+ul.navigation-bar > li > a:hover {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	background-color: rgb(21, 139, 194);
 	text-decoration: none;
 	color: white;
@@ -87,13 +97,17 @@ ul.navigation-col {
     padding: 0;
 }
 
-ul.navigation-col li {
-	text-align: center;
-	margin: 30px;
+ul.navigation-col > li {
+	text-align: right;
 	position: relative;
 }
 
-ul.navigation-col li:hover, ul.navigation-col li:hover a:hover {
+ul.navigation-col > li > a {
+	display: block;
+	width: 100%;
+}
+
+ul.navigation-col > li > li:focus , ul.navigation-col > li:hover > a:hover {
 	background-color: rgb(21, 139, 194);
 	text-decoration: none;
 	color: white;
