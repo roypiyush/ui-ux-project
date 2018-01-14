@@ -1,80 +1,78 @@
 <!DOCTYPE html>
 <html>
-<script src="angular.min.js"></script>
-
+<script src="js/angular.min.js"></script>
+<script src="js/angular.route.js"></script>
+<script src="js/angular_minimal.js"></script>
 <body>
-<script>
-  var app = angular.module('myApp', []);
-  app.controller('myCtrl', function($scope) {
-    $scope.firstName= "John";
-    $scope.lastName= "Doe";
-    $scope.names = ["Emil", "Tobias", "Linus"];
-  });
-  $scope.myHeader = "Hello Piyush!";
-  $timeout(function () {
-        $scope.myHeader = "How are you today?";
-  }, 2000);
-  app.controller('myCtrl', function($scope) {
-    $scope.count = 0;
-  });
-</script>
+  <div ng-app="myApp" ng-controller="myCtrl" ng-init="points=[1,15,19,2,40]">
+    
+    <p><a href="https://www.w3schools.com/angular/main.htm">Main</a></p>
+    <a href="https://www.w3schools.com/angular/red.htm">Red</a>
+    <a href="https://www.w3schools.com/angular/green.htm">Green</a>
+    <a href="https://www.w3schools.com/angular/blue.htm">Blue</a>
+    <div ng-view></div>
 
-<div ng-app="myApp" ng-controller="myCtrl" ng-init="myCol='lightblue'; person={firstName:'John',lastName:'Doe'; points=[1,15,19,2,40]}">
-	<p>{{myHeader}}</p>
-  <p>Name: <input type="text" ng-model="name" placeholder='Enter your name'></p>
-  <p ng-bind="name"></p>
-  <p>The name is <span ng-bind="firstName"></span></p>
-  <p>My first expression: {{ 5 + 5 }}</p>
-  First Name: <input type="text" ng-model="firstName"><br>
-  Last Name: <input type="text" ng-model="lastName"><br>
-  <br>
-  Full Name: {{firstName + " " + lastName}}
-  <br/>
-  <input class='w3-input' style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
-  <p>The name [Object] is {{ person.firstName + " " + person.lastName }}</p>
-  <p>Array Demo -&gt; The third result is {{ points[2] }}</p>
-  <p>Array Demo using span -&gt; The third result is <span ng-bind="points[2]"></span></p>
-
-  <div>
-    <ul>
-      <p>ng-repeat demo</p>
+    
+    <h1>The time is: {{theTime}}</h1>
+    <w3-test-directive></w3-test-directive>
+    <p>{{myHeader | uppercase}} You are currently at <h3>{{myUrl}}</h3></p>
+    <p>Array Demo using span -&gt; The third result is <span ng-bind="points[2]"></span></p>
+    
+    <div>
       <ul>
-      <li style="color:blue" ng-repeat="x in names">{{x | uppercase}}</li>
-      <li style="color:red" ng-repeat="x in names">{{x | lowercase}}</li>
-      <li style='color:green' ng-repeat="x in names">{{x}}</li>
-    </ul>
-  </div>
-  <div>
-    <h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
-    <h2>{{ count }}</h2>
-  </div>
-  <form>
-    Select a topic:
-    <select ng-model="myVar">
-      <option value="">
-      <option value="dogs">Dogs
-      <option value="tuts">Tutorials
-      <option value="cars">Cars
-    </select>
-  </form>
-
-  <div class='w3-container' ng-switch="myVar">
-    <div ng-switch-when="dogs">
-      <h1>Dogs</h1>
-      <p>Welcome to a world of dogs.</p>
+        <p>ng-repeat demo</p>
+        <ul>
+        <li style="color:blue" ng-repeat="x in names">{{x | uppercase}}</li>
+        <li style="color:red" ng-repeat="x in names">{{x | lowercase}}</li>
+        <li style='color:green' ng-repeat="x in names">{{x}}</li>
+      </ul>
     </div>
-    <div ng-switch-when="tuts">
-      <h1>Tutorials</h1>
-      <p>Learn from examples.</p>
+    
+    <table style="border: black solid 1px;">
+      <tr ng-repeat="x in records">
+        <td ng-if="$odd" style="background-color:#f1f1f1">
+        {{ x.Name }}</td>
+        <td ng-if="$even">
+        {{ x.Name }}</td>
+        <td ng-if="$odd" style="background-color:#f1f1f1">
+        {{ x.Country }}</td>
+        <td ng-if="$even">
+        {{ x.Country }}</td>
+      </tr>
+    </table>
+  
+    <form name="myForm">
+      Email:
+      <input type="email" name="myAddress" ng-model="myText" required>
+      <h4>Status</h4>
+      <p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets all criteria).</p>
+      <p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed).</p>
+      <p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus).</p>
+      
+      Select a topic:
+      <select ng-model="myVar">
+        <option value="">Select
+        <option value="dogs">Dogs
+        <option value="tuts">Tutorials
+        <option value="cars">Cars
+      </select>
+    </form>
+  
+    <div class='w3-container' ng-switch="myVar">
+      <div ng-switch-when="dogs">
+        <h1>Dogs</h1>
+        <p>Welcome to a world of dogs.</p>
+      </div>
+      <div ng-switch-when="tuts">
+        <h1>Tutorials</h1>
+        <p>Learn from examples.</p>
+      </div>
+      <div ng-switch-when="cars">
+        <h1>Cars</h1>
+        <p>Read about cars.</p>
+      </div>
     </div>
-    <div ng-switch-when="cars">
-      <h1>Cars</h1>
-      <p>Read about cars.</p>
-    </div>
+    <div>{{myWelcome}}</div>
   </div>
-</div>
-
-
-
 </body>
 </html>

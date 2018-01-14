@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-<script src="angular.min.js"></script>
+<script src="js/angular.min.js"></script>
+
 <body>
 
-<div ng-app="">
+<div ng-app="" ng-init="quantity=1;cost=5;">
  
 <p>Input something in the input box:</p>
-<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
-<h1>Hello {{name}}</h1>
+<p>Name : <input style="background-color:{{name}}" type="text" ng-model="name" placeholder="Enter color here"></p>
+<h1>Example using expression {{name}}</h1>
+<p ng-bind="name">Example using ng-bind</p>
+<p>You can also perform mathematical operations 5 + 5 = {{ 5 + 5 }} </p>
+<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+<div>
+    <h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
+    <h2>{{ count }}</h2>
+</div>
 
 </div>
+
 
 </body>
 </html>
