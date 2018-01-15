@@ -39,6 +39,7 @@ ul.about-us {
 	margin-right: auto;
 	min-width: 250px;
 	max-width: 300px;
+	text-align: center;
 }
 
 li.about-us {
@@ -106,6 +107,7 @@ ul.navigation-col > li > a {
 	padding: 10px;
 	border: 1px solid transparent;
 	border-radius: 4px;
+	outline: 0; // Removes Dotted border around link
 }
 
 ul.navigation-col > li > a:hover {
