@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/angular.min.js"></script>
 	<script src="js/jquery-3.2.1.js"></script>
@@ -55,11 +55,12 @@
 		<div id="your-blogs"  class="navigation-bar-item" style="display: none;">
 			<h1>Your Blogs</h1>
 			<table class="table" style="width:100%;">
-				<tbody class="light_color">
-					<tr ng-repeat="d in your_blogs">
-						<td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ d.id }}</a></label></td>
-						<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ d.blog }}</a></label></td>
-						<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
+				<tbody>
+					<tr ng-repeat="yb in your_blogs">
+						<td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ yb.id }}</a></label></td>
+						<td sytle="width:50%;"><label style="font-style: italic;"><a href="#">{{ yb.blog }}</a></label></td>
+						<td sytle="width:20%;">{{yb.publishedOn | date}}</td>
+						<td sytle="width:10%;"><a href="#" class="delete"></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -68,9 +69,10 @@
 			<h1>Friends</h1>
 			<table class="table" style="width:100%;">
 				<tbody class="light_color">
-					<tr ng-repeat="dd in friend_data">
-						<td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ dd.id }}</a></label></td>
-						<td sytle="width:70%;"><label style="font-style: italic;"><a href="#">{{ dd.blog }}</a></label></td>
+					<tr ng-repeat="fd in friend_data">
+						<td sytle="width:20%;"><label data-toggle="modal" data-target="#myModal"><a href="#">{{ fd.id }}</a></label></td>
+						<td sytle="width:50%;"><label style="font-style: italic;"><a href="#">{{ fd.blog }}</a></label></td>
+						<td sytle="width:20%;">{{fd.publishedOn | date}}</td>
 						<td sytle="width:10%;"><a href="#"><span class="glyphicon glyphicon-trash delete"></span></a></td>
 					</tr>
 				</tbody>

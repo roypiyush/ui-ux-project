@@ -2,6 +2,15 @@ body {
 	background-color:rgb(247, 245, 245);
 }
 
+.delete:after {
+	content: "X";
+	color: crimson;
+}
+
+td {
+	text-align: center;
+}
+
 .form {
 	min-width: 250px;
 	max-width: 300px;
