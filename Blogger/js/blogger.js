@@ -1,9 +1,13 @@
-function show(id) {
-	$(id).css("display", "block");
-}
 
-function hide(id) {
-	$(id).css("display", "none");
+
+function showTab(element) {
+	currentSelection = $('.active').attr('href')
+	$(currentSelection).css("display", "none");
+	// Remove from anchor
+	$("[href='" + currentSelection + "']").removeClass();
+	$(element).css("display", "block");
+	// // add to anchor
+	$("[href='" + element + "']").addClass('active');
 }
 
 function showDashboard() {
