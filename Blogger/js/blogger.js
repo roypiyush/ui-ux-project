@@ -10,24 +10,6 @@ function showTab(element) {
 	$("[href='" + element + "']").addClass('active');
 }
 
-function showDashboard() {
-	show('#dashboard'); 
-	hide('#your-blogs'); 
-	hide('#friends')
-}
-
-function showYourBlog() {
-	hide('#dashboard'); 
-	show('#your-blogs'); 
-	hide('#friends')
-}
-
-function showFriends() {
-	hide('#dashboard'); 
-	hide('#your-blogs'); 
-	show('#friends')
-}
-
 function showWriteBlog() {
 	show('#write-blog'); 
 	hide('#search-blog'); 
