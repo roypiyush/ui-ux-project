@@ -103,7 +103,7 @@ ul.navigation-bar > li > a:hover {
 .active {
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
-	background-color: rgb(21, 139, 194);
+	background-color: rgb(129, 192, 221);
 	text-decoration: none;
 	color: white;
 }

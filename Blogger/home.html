@@ -18,17 +18,17 @@
 	<div class="header"></div>
 	<div class="container" style="margin-top:10px">
 		<ul class="navigation-bar">
-			<li><a href="#dashboard" onclick="showTab('#dashboard')" class="active">Dashboard</a></li>
-			<li><a href="#your-blogs" onclick="showTab('#your-blogs')">Your Blogs</a></li>
-			<li><a href="#friends" onclick="showTab('#friends')">Friends</a></li>
+			<li><a href="#dashboard" onclick="showTab('ul.navigation-bar > li > a.active', '#dashboard', 'active')" class="active">Dashboard</a></li>
+			<li><a href="#your-blogs" onclick="showTab('ul.navigation-bar > li > a.active', '#your-blogs', 'active')">Your Blogs</a></li>
+			<li><a href="#friends" onclick="showTab('ul.navigation-bar > li > a.active', '#friends', 'active')">Friends</a></li>
 		</ul>
 		<div id="dashboard" class="navigation-bar-item container">
 			<div class="row" style="position:relative; height: 600px;">
 				<div class="col-sm-2" style="box-shadow: 5px 0 15px -5px grey;">
 					<ul id="dashboard-features" class="navigation-col">
-						<li><a href="#" onclick="showWriteBlog()">Write Blog</a></li>
-						<li><a href="#" onclick="showSearchBlog()">Search Blog</a></li>
-						<li><a href="#" onclick="showUserSearch()">User Search</a></li>
+						<li><a href="#write-blog" onclick="showTab('ul.navigation-col > li > a.active', '#write-blog', 'active')" class="active">Write Blog</a></li>
+						<li><a href="#search-blog" onclick="showTab('ul.navigation-col > li > a.active', '#search-blog', 'active')">Search Blog</a></li>
+						<li><a href="#user-search" onclick="showTab('ul.navigation-col > li > a.active', '#user-search', 'active')">User Search</a></li>
 					</ul>		
 				</div>
 				<div class="col-sm-10">

@@ -1,31 +1,13 @@
 
 
-function showTab(element) {
-	currentSelection = $('.active').attr('href')
+function showTab(selection, element, classValue) {
+	currentSelection = $(selection).attr('href')
 	$(currentSelection).css("display", "none");
 	// Remove from anchor
 	$("[href='" + currentSelection + "']").removeClass();
 	$(element).css("display", "block");
 	// // add to anchor
-	$("[href='" + element + "']").addClass('active');
-}
-
-function showWriteBlog() {
-	show('#write-blog'); 
-	hide('#search-blog'); 
-	hide('#user-search')
-}
-
-function showSearchBlog() {
-	hide('#write-blog'); 
-	show('#search-blog'); 
-	hide('#user-search')
-}
-
-function showUserSearch() {
-	hide('#write-blog'); 
-	hide('#search-blog'); 
-	show('#user-search')
+	$("[href='" + element + "']").addClass(classValue);
 }
 
 function controlYourBlog() {
