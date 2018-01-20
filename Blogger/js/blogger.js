@@ -5,9 +5,10 @@ function showTab(selection, element, classValue) {
 	$(currentSelection).css("display", "none");
 	// Remove from anchor
 	$("[href='" + currentSelection + "']").removeClass();
-	$(element).css("display", "block");
+	$(element).fadeIn();
 	// // add to anchor
 	$("[href='" + element + "']").addClass(classValue);
+	
 }
 
 function controlYourBlog() {
