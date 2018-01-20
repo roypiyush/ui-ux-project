@@ -16,7 +16,7 @@ function controlYourBlog() {
 	app.controller('your_blog_controller', function($scope) {
 		$scope.your_blogs = [];
 		$scope.friend_data = [];
-		for(var i=0 ; i<10; i++) {
+		for(var i=0 ; i<20; i++) {
 			$scope.your_blogs[i] = {"id": "piyush2k13", "blog": "some blogs", "publishedOn": Date.now()};
 			$scope.friend_data[i] = {"id": "friend_id_1234", "blog": "some blogs", "publishedOn": Date.now()};
 		}
