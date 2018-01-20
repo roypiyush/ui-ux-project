@@ -1,3 +1,7 @@
+* {
+	outline: 0; /* Removes Dotted border around link */
+}
+
 body {
 	background-color:rgb(247, 245, 245);
 }
@@ -132,7 +136,6 @@ ul.navigation-col > li > a {
 	padding: 10px;
 	border: 1px solid transparent;
 	border-radius: 4px;
-	outline: 0; /* Removes Dotted border around link */
 }
 
 ul.navigation-col > li > a:hover {
