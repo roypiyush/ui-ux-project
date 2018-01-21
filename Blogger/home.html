@@ -51,7 +51,10 @@
 			</div>
 		</div>
 		<div id="your-blogs"  class="navigation-bar-item" style="display: none;">
-			<h1>Your Blogs</h1>
+			<div style="margin: 5px 5px 5px 5px;">
+				<input style="font-size:30px; height: 50px;" type="text" id="blogHeader" class="form-control"
+				placeholder="Search Your Blogs"/>
+			</div>
 			<table class="table" style="width:100%;">
 				<tbody>
 					<tr ng-repeat="yb in your_blogs">
@@ -64,7 +67,10 @@
 			</table>
 		</div>
 		<div id="friends" class="navigation-bar-item" style="display: none;">
-			<h1>Friends</h1>
+			<div style="margin: 5px 5px 5px 5px;">
+				<input style="font-size:30px; height: 50px;" type="text" id="blogHeader" class="form-control"
+				placeholder="Search Your Friends"/>
+			</div>
 			<table class="table" style="width:100%;">
 				<tbody class="light_color">
 					<tr ng-repeat="fd in friend_data">
