@@ -68,4 +68,4 @@ app.post('/user/add', function(req, res){
 
 })
 
-app.listen(8080, () => console.log('Application started on 8080'))
+app.listen(8080, () => console.log('Application started on http://localhost:8080'))
