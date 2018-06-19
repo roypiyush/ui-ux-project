@@ -64,7 +64,7 @@ app.post('/user/add', function(req, res){
         }
         console.log('User Created ' + newUser);
         users.push(newUser)
-        res.send('Success');
+        res.redirect("/")
     }
 
 })
