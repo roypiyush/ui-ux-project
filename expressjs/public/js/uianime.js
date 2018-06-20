@@ -16,3 +16,14 @@ function toggle(selection) {
 		$(selection).fadeIn();
 	}
 }
+
+function update(item) {
+	console.log("Updating row " + item);
+}
+
+function remove(item) {
+	console.log("Removing row " + item);
+	var rowId = "#row" + item;
+	$(rowId).remove();
+	$.post("/user/delete/" +  item);
+}

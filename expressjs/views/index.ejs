@@ -109,7 +109,7 @@
                 </thead>
                 <tbody>
                     <% users.forEach(function(user, index){ %>
-                        <tr>
+                        <tr id=row<%= index %>>
                             <td>
                                 <%= index + 1 %>
                             </td>
@@ -123,8 +123,8 @@
                                 <%= user.email %>
                             </td>
                             <td>
-                                <a href='#'><img width="24" height="24" src="/icons/icons8-pencil-30.png"/></a>
-                                <a href='#'><img width="24" height="24" src="/icons/icons8-close-window-24.png"/></a>
+                                <a href='#' onclick=update(<%= index %>)><img width="24" height="24" src="/icons/icons8-pencil-30.png"/></a>
+                                <a href='#' onclick=remove(<%= index %>)><img width="24" height="24" src="/icons/icons8-close-window-24.png"/></a>
                             </td>
                         </tr>
                     <% }) %>

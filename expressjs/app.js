@@ -69,4 +69,10 @@ app.post('/user/add', function(req, res){
 
 })
 
+
+app.post('/user/delete/:id', function(req, res){
+    console.log("Output " + req.params.id)
+    users.splice(req.params.id, 1);
+})
+
 app.listen(8080, () => console.log('Application started on http://localhost:8080'))
