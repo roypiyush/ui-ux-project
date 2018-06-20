@@ -7,3 +7,12 @@ function showTab(selection, element, classValue) {
 	// add to anchor
 	$("[href='" + element + "']").addClass(classValue);
 }
+
+function toggle(selection) {
+	if ($(selection).is(':visible')) {
+		$(selection).fadeOut();
+	}
+	else {
+		$(selection).fadeIn();
+	}
+}
