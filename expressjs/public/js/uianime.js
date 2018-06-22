@@ -27,3 +27,7 @@ function remove(item) {
 	$(rowId).remove();
 	$.post("/user/delete/" +  item);
 }
+
+function addCustomer() {
+	$('#addCustomer').submit();
+}

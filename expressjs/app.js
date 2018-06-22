@@ -63,8 +63,8 @@ app.post('/user/add', function(req, res){
             email: req.body.email
         }
         console.log('User Created ' + newUser);
-        users.push(newUser)
-        res.redirect("/")
+        users.push(newUser);
+        res.redirect("/");
     }
 
 })
