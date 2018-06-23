@@ -1,4 +1,3 @@
-
 var Person = Backbone.Model.extend({
     defaults: {
         fname: '',
@@ -40,6 +39,27 @@ var NameDiv = Backbone.View.extend({
     }
 });
 
+var Input = Backbone.View.extend({
+    initialize: function() {
+        this.render();
+        this.on('customenter', function() {
+            console.log('Test');
+            var personLabel = new Label({className: 'purple'});
+            this.$el.append(personLabel.name());
+        });
+    },
+    // events: {
+    //     'change input': function() {
+    //         console.log('Test');
+    //         var personLabel = new Label({className: 'purple'});
+    //         this.$el.append(personLabel.name());
+    //     }
+    // },
+    render: function() {
+        var template = _.template($('#inputTemplate').html(), {});
+        this.$el.append(template);
+    }
+});
 /*
 onclick function
 function call(id) {
@@ -48,8 +68,13 @@ function call(id) {
 }
 */
 
-
-
 $(function(){
-    var view = new NameDiv({el: '#fname'}); // bind view and events with it
+    new NameDiv({el: '#fname'}); // bind view and events with it
+    var inputView = new Input({el: '#fname'});
+    $('#myinput').keydown(function (e) {
+        if (e.keyCode == 13) {
+            // on function trigger example
+            inputView.trigger('customenter');
+        }
+    });
 });

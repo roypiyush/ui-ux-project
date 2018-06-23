@@ -8,7 +8,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "requirejs": "^2.3.5"
   },
   "devDependencies": {
     "eslint": "^5.0.0"
