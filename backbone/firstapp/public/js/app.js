@@ -40,23 +40,18 @@ var NameDiv = Backbone.View.extend({
 });
 
 var Input = Backbone.View.extend({
-    initialize: function() {
-        this.render();
-        this.on('customenter', function() {
-            console.log('Test');
-            var personLabel = new Label({className: 'purple'});
-            this.$el.append(personLabel.name());
+    
+    initialize: function(args) {
+        this.render(args.id);
+        this.on('customenter', function(textValue) {
+            var label = new Label({className: 'purple'})
+            this.$el.append(label.name());
         });
     },
-    // events: {
-    //     'change input': function() {
-    //         console.log('Test');
-    //         var personLabel = new Label({className: 'purple'});
-    //         this.$el.append(personLabel.name());
-    //     }
-    // },
-    render: function() {
-        var template = _.template($('#inputTemplate').html(), {});
+    render: function(id) {
+        var template = _.template($('#inputTemplate').html(), 
+        {id} // Pass template parameters
+        );
         this.$el.append(template);
     }
 });
@@ -70,11 +65,11 @@ function call(id) {
 
 $(function(){
     new NameDiv({el: '#fname'}); // bind view and events with it
-    var inputView = new Input({el: '#fname'});
+    var inputView = new Input({el: '#fname', id: 'myinput'}); // These are arguments
     $('#myinput').keydown(function (e) {
         if (e.keyCode == 13) {
             // on function trigger example
-            inputView.trigger('customenter');
+            inputView.trigger('customenter', $('#myinput').val());
         }
     });
 });
