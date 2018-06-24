@@ -1,0 +1,17 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "Backbone JS Application",
+  "scripts": {
+    "start": "http-server -p 8000 -g --cors -s"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.0"
+  }
+}

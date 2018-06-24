@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(214, 214, 214);
+}
+
+.red {
+    display: block;
+    color: coral;
+}
+
+.blue {
+    display: block;
+    color: dodgerblue;
+}
+
+.purple {
+    display: block;
+    color: plum;
+}
