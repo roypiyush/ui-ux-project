@@ -3,9 +3,9 @@ var Person = Backbone.Model.extend({
         fname: '',
         lname: ''
     },
-    initialize: function() {
-        this.fname = 'Piyush';
-        this.lname = 'Roy';
+    initialize: function(args) {
+        this.fname = args.fname;
+        this.lname = args.lname;
     },
     name: function () {
         return this.fname + ' ' + this.lname;
@@ -19,10 +19,10 @@ var Label = Backbone.View.extend({
     defaults: {
         className: '',
     },
-    name: function () {
-        var person = new Person();
+    name: function (textValue) {
+        var person = new Person({fname: 'Piyush', lname: 'Roy'});
         this.el.className = this.className;
-        return this.$el.append(person.name());
+        return this.$el.append(person.name() + ' has entered ' + textValue);
     }
 });
 
@@ -45,7 +45,7 @@ var Input = Backbone.View.extend({
         this.render(args.id);
         this.on('customenter', function(textValue) {
             var label = new Label({className: 'purple'})
-            this.$el.append(label.name());
+            this.$el.append(label.name(textValue));
         });
     },
     render: function(id) {
