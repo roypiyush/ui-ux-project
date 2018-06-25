@@ -10,9 +10,10 @@ class Form extends React.Component {
               <FormField name="First Name"/>
               <FormField name="Last Name"/>
               <FormField name="Age"/>
+              <FormField name="Email"/>
               <div className='text-center col-sm-12'>
-                <SimpleButton value='MyButton' text='Button Text' className="btn btn-primary form-btn" />
-                <SimpleButton value='MyButton' text='Button Text' className="btn btn-default form-btn" />
+                <SimpleButton value='MyButton' text='Submit' className="btn btn-primary form-btn" />
+                <SimpleButton value='MyButton' text='Cancel' className="btn btn-default form-btn" />
               </div>
             </form>
           </div>
