@@ -1,14 +1,12 @@
 import React from 'react';
-import SimpleDiv from './simpleDiv.jsx';
-import SimpleButton from './button.jsx';
+import Form from './jsx/form.jsx';
+
 
 class App extends React.Component {
    render() {
       return (
-          <div>
-            <SimpleDiv />
-            <SimpleButton value='MyButton' text='Button Text' />
-            <SimpleDiv />
+          <div className='col-sm-6'>
+            <Form/>
           </div>
       );
    }
