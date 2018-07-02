@@ -16,8 +16,9 @@ class Form extends React.Component {
   }
   render() {
     return (
-      <div>
-        <form action="/">
+      <div className='col-sm-6'>
+        <form action="/" className='simple-form'>
+          <h3 className='text-center'><label>Please fill up form</label></h3>
           {this.state.rows.map((r) => <FormField name={r.name} type={r.type} key={r.name.toString()} /> )}
           <div className='text-center col-sm-12'>
             <SimpleButton value='MyButton' text='Submit' className="btn btn-primary form-btn" />
