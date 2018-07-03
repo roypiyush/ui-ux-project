@@ -5,7 +5,7 @@ import Form from './jsx/form.jsx';
 class App extends React.Component {
    render() {
       return (
-            <Form/>
+            <Form class='simple-form'/>
       );
    }
 }

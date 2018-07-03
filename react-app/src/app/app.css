@@ -5,3 +5,19 @@
 .form-btn {
     margin: 0px 5px;
 }
+
+.simple-form {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+    padding: 10px 10px;
+}
+
+.show-error {
+    display: block;
+    color: coral;
+}
+
+.hide-error {
+    display: none;
+}
