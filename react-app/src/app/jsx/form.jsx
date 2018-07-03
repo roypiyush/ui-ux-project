@@ -1,6 +1,7 @@
 import React from 'react';
 import FormField from './formField.jsx';
 import SimpleButton from './button.jsx';
+import constants from '../constants.js';
 
 class Form extends React.Component {
 
@@ -10,28 +11,24 @@ class Form extends React.Component {
         {
           name: 'First Name', type: 'input', errorMessage: 'Not valid first name',
           validate: function(value) {
-            var pattern = new RegExp("^[A-Z]+[a-z]+$");
-            return pattern.test(value);
+            return constants.Regex.name.test(value);
           }}, 
         {
           name: 'Last Name', type: 'input', errorMessage: 'Not valid last name',
           validate: function(value) {
-            var pattern = new RegExp("^[A-Z][a-z]+$");
-            return pattern.test(value);
+            return constants.Regex.name.test(value);
           }
         },
         {
           name: 'Age', type: 'input', errorMessage: 'Not valid Age',
           validate: function(value) {
-            var pattern = new RegExp("^\\d{1,3}$");
-            return pattern.test(value);
+            return constants.Regex.age.test(Number(value));
           }
         },
         {
           name: 'Email', type: 'input', errorMessage: 'Not valid email',
           validate: function(value) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(String(value).toLowerCase());
+            return constants.Regex.email.test(String(value).toLowerCase());
           }
         }
       ]
