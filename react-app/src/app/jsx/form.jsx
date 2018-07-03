@@ -3,6 +3,7 @@ import FormField from './formField.jsx';
 import SimpleButton from './button.jsx';
 import constants from '../constants.js';
 
+var axios = require('axios');
 class Form extends React.Component {
 
   constructor(props) {
@@ -34,6 +35,23 @@ class Form extends React.Component {
       ]
     }
   }
+
+  componentDidMount() {
+    axios.get("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        var users = response.data.map(c => {
+          return {
+            id: c.id,
+            fname: c.name,
+            lname: c.username
+          }
+        });
+        users.map(u => {
+          console.log("id " + u.id + "fname " + u.fname + "lname: " + u.lname);
+        })
+      }).catch(error => console.log(error));
+  }
+
   render() {
     return (
       <div className='simple-form col-sm-6'>
@@ -50,8 +68,8 @@ class Form extends React.Component {
               />)
           }
           <div className='text-center col-sm-12'>
-            <SimpleButton value='MyButton' text='Submit' className="btn btn-primary form-btn" />
-            <SimpleButton value='MyButton' text='Cancel' className="btn btn-default form-btn" />
+            <SimpleButton text='Submit' className="btn btn-primary form-btn" />
+            <SimpleButton text='Cancel' className="btn btn-default form-btn" />
           </div>
         </form>
       </div>
