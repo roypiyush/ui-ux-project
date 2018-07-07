@@ -1,10 +1,11 @@
 var path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var SRC_DIR = path.resolve(__dirname, 'src');
 var DIST_DIR = path.resolve(__dirname, 'dist');
 
 var config = {
-   entry: SRC_DIR + '/index.js',
+   entry: SRC_DIR + '/app/react-app.js',
    output: {
       path: DIST_DIR + '/app',
       filename: 'build.js',
