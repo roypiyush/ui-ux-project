@@ -37,24 +37,26 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/users")
+    axios.get("http://localhost:8000/users")
       .then(response => {
         var users = response.data.map(c => {
           return {
             id: c.id,
-            fname: c.name,
-            lname: c.username
+            fname: c.fname,
+            lname: c.lname,
+            email: c.email,
+            age: c.age
           }
         });
         users.map(u => {
-          console.log("id " + u.id + "fname " + u.fname + "lname: " + u.lname);
+          console.log("id " + u.id + "fname " + u.fname + "lname: " + u.lname + "email: " + u.email + "age: " + u.age);
         })
       }).catch(error => console.log(error));
   }
 
   render() {
     return (
-      <div className='simple-form col-sm-6'>
+      <div className={this.props.className}>
         <form action="/">
           <h3 className='text-center'><label>Please fill up form</label></h3>
           {
