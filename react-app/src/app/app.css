@@ -1,23 +1,23 @@
 .form-field {
-    padding: 5px 0px;
+  padding: 5px 0px;
 }
 
 .form-btn {
-    margin: 0px 5px;
+  margin: 0px 5px;
 }
 
 .simple-form {
-    border: 1px solid gray;
-    border-radius: 5px;
-    background-color: rgb(247, 247, 247);
-    padding: 10px 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: rgb(247, 247, 247);
+  padding: 10px 10px;
 }
 
 .show-error {
-    display: block;
-    color: coral;
+  display: block;
+  color: coral;
 }
 
 .hide-error {
-    display: none;
+  display: none;
 }
