@@ -33,7 +33,7 @@ class Table extends React.Component {
 					<thead>
 						<tr>
 							{
-								this.props.headers.map((h) => <th>{h}</th>)
+								this.props.headers.map((h) => <th className='text-center'>{h}</th>)
 							}
 						</tr>
 					</thead>
@@ -41,7 +41,7 @@ class Table extends React.Component {
 						{
 							this.state.users.map((r) =>
 								<tr>
-									{Object.entries(r).map(([key, value]) => <td>{value}</td>)}
+									{Object.entries(r).map(([key, value]) => <td className='text-center'>{value}</td>)}
 								</tr>
 							)
 						}

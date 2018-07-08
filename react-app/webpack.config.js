@@ -1,5 +1,4 @@
 var path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var SRC_DIR = path.resolve(__dirname, 'src');
 var DIST_DIR = path.resolve(__dirname, 'dist');

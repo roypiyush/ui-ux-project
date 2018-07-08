@@ -8,7 +8,8 @@ class FormField extends React.Component {
     if (this.props.type === 'input') {
       field = <Input name={this.props.name} errorMessage={this.props.errorMessage}
         validate={this.props.validate} />;
-      console.log("FormField of type input received " + field);
+    } else if (this.props.type === 'dropdown') {
+      
     }
     return (
       <div>
