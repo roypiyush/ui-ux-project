@@ -9,8 +9,8 @@ class App extends React.Component {
       <div>
         <div>
           <NavigationBar bars={[
-            {id: 'addUser', name: 'Add User', className: 'active'},
-            {id: 'listUser', name: 'List Users'},
+            {id: 'addUser', name: 'Add User'},
+            {id: 'listUser', name: 'List Users', className: 'active'},
             {id: 'printUser', name: 'Print Users'}
           ]}  
             name='User Management'

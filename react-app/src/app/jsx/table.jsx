@@ -1,31 +1,24 @@
 import React from 'react';
-import axios from 'axios';
+import UserStore from '../store/userstore';
+import Constants from '../constants';
 
-class Table extends React.Component {
+export default class Table extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			users: []
 		}
+		this.registerEvent();
 	}
 
-	componentDidMount() {
-		axios.get("http://localhost:8000/users")
-			.then(response => {
-				this.state.users = response.data.map(c => {
-					return {
-						id: c.id,
-						fname: c.fname,
-						lname: c.lname,
-						email: c.email,
-						age: c.age
-					}
-				});
-				console.log("Users Count " + this.state.users.length);
-				this.setState(this.state);
-			}).catch(error => console.log(error));
+	registerEvent() {
+		UserStore.on(Constants.Events.USER_CHANGE, () => {
+			this.setState({
+				users: UserStore.getAll()
+			});
+		});
 	}
-
+	
 	render() {
 		return (
 			<div>
@@ -51,5 +44,3 @@ class Table extends React.Component {
 		);
 	}
 }
-
-export default Table;
