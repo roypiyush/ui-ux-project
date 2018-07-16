@@ -34,7 +34,11 @@ export default class Table extends React.Component {
 						{
 							this.state.users.map((r) =>
 								<tr>
-									{Object.entries(r).map(([key, value]) => <td className='text-center'>{value}</td>)}
+									<td className='text-center'>{r.id}</td>
+									<td className='text-center'>{r.fname}</td>
+									<td className='text-center'>{r.lname}</td>
+									<td className='text-center'>{r.email}</td>
+									<td className='text-center'>{r.age}</td>
 								</tr>
 							)
 						}

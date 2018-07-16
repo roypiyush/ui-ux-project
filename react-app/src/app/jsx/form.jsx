@@ -61,14 +61,14 @@ class Form extends React.Component {
         validate: function (value) {
           return Constants.Regex.age.test(Number(value));
         },
-        handleChange: this.setEmail.bind(this)
+        handleChange: this.setAge.bind(this)
       },
       {
         name: 'Email', type: 'input', errorMessage: 'Not valid email',
         validate: function (value) {
           return Constants.Regex.email.test(String(value).toLowerCase());
         },
-        handleChange: this.setAge.bind(this)
+        handleChange: this.setEmail.bind(this)
       }
     ];
   
