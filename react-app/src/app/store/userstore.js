@@ -29,6 +29,7 @@ class UserStore extends EventEmitter {
   }
 
   add(user) {
+    user.id = this.users.length;
     this.users.push(user);
     console.log('Users Count ' + this.users.length);
     this.emit(Constants.Events.USER_CHANGE);

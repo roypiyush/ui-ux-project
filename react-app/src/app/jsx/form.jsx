@@ -1,8 +1,7 @@
 import React from 'react';
 import FormField from './formField.jsx';
 import SimpleButton from './button.jsx';
-import Constants from '../constants.js';
-import UserStores from '../store/userstore';
+import Constants from '../constants';
 import Dispatcher from '../dispacher/defauldispatcher';
 
 class Form extends React.Component {
@@ -32,7 +31,6 @@ class Form extends React.Component {
 
   handleClick() {
     const user = {
-      id: Date.now(),
       fname: this.state.firstName,
       lname: this.state.lastName,
       email: this.state.email,
