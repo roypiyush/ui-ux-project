@@ -8,10 +8,10 @@ export default class Table extends React.Component {
 		this.state = {
 			users: []
 		}
-		this.registerEvent();
+		this.registerUserStoreChangeEvent();
 	}
 
-	registerEvent() {
+	registerUserStoreChangeEvent() {
 		UserStore.on(Constants.Events.USER_CHANGE, () => {
 			this.setState({
 				users: UserStore.getAll()

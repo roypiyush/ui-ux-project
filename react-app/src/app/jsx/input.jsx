@@ -1,4 +1,5 @@
 import React from 'react';
+import Dispatcher from '../dispacher/defauldispatcher';
 
 class Input extends React.Component {
 
@@ -10,19 +11,26 @@ class Input extends React.Component {
     }
     this.handleKeypress = this.handleKeypress.bind(this);
   }
-  handleKeypress(event, validate) {
+  handleKeypress(event) {
     this.state.data = event.target.value;
     if (this.props.validate != null) {
-      this.setState({ errorClass: this.props.validate(this.state.data) ? 'hide-error' : 'show-error' });
+      if (this.props.validate(this.state.data)) {
+        this.setState({ errorClass: 'hide-error'});
+        this.props.handleChange(event);
+      } else {
+        this.setState({ errorClass: 'show-error' });
+      }
     }
   }
-
+  getData() {
+    return this.state.data;
+  }
   render() {
     return (
       <div className='form-group'>
         <div className="form-field col-sm-3"><label>{this.props.name}</label></div>
         <div className="form-field col-sm-9">
-          <input className="form-control" type='text' onKeyUp={(e) => this.handleKeypress(e, this.props.validate)} />
+          <input className="form-control" type='text' onKeyUp={(e) => this.handleKeypress(e)} />
         </div>
         <div className={this.state.errorClass}>{this.props.errorMessage}</div>
       </div>

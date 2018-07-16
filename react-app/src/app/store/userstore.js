@@ -1,6 +1,7 @@
 import {EventEmitter} from 'events';
 import axios from 'axios';
 import Constants from '../constants';
+import Dispatcher from '../dispacher/defauldispatcher';
 
 class UserStore extends EventEmitter {
   constructor() {
@@ -32,6 +33,27 @@ class UserStore extends EventEmitter {
     console.log('Users Count ' + this.users.length);
     this.emit(Constants.Events.USER_CHANGE);
   }
+
+  handleActions(params) {
+    var action = params.action;
+    var object = params.object;
+    console.log('Received Action ' + action + JSON.stringify(object));
+    switch(action) {
+      case Constants.Actions.ADD_USER:
+        userStore.add(object);
+      break;
+      case Constants.Actions.GET_USER:
+      break;
+      case Constants.Actions.UPDATE_USER:
+      break;
+      case Constants.Actions.DELETE_USER:
+      break;
+      default:
+        console.log(action + ' Action not supported ');
+        break;
+    }
+  }
 }
 const userStore = new UserStore;
+Dispatcher.register(userStore.handleActions.bind(this));
 export default userStore;
