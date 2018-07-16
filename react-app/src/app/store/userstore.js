@@ -19,7 +19,6 @@ class UserStore extends EventEmitter {
 						age: c.age
 					}
 				});
-        console.log("Users Count " + this.users.length);
         this.emit(Constants.Events.USER_CHANGE);
 			}).catch(error => console.log(error));
   }
@@ -29,10 +28,8 @@ class UserStore extends EventEmitter {
   }
 
   add(user) {
-    var store = this;
     axios.put('http://localhost:8000/user', {user: user})
     .then(response => {
-      console.log("Response " + response.data.message);
       this.users = response.data.users;
       this.emit(Constants.Events.USER_CHANGE);
     });
@@ -41,7 +38,6 @@ class UserStore extends EventEmitter {
   handleActions(params) {
     var action = params.action;
     var object = params.object;
-    console.log('Received Action ' + action + JSON.stringify(object));
     switch(action) {
       case Constants.Actions.ADD_USER:
         userStore.add(object);

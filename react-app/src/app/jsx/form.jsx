@@ -36,9 +36,8 @@ class Form extends React.Component {
       email: this.state.email,
       age: this.state.age
     }
-    console.log("User" + JSON.stringify(user));
     Dispatcher.dispatch({action: Constants.Actions.ADD_USER, object: user});
-    
+
   }
 
   render() {
