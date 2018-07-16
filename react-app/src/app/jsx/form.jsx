@@ -38,6 +38,7 @@ class Form extends React.Component {
     }
     console.log("User" + JSON.stringify(user));
     Dispatcher.dispatch({action: Constants.Actions.ADD_USER, object: user});
+    
   }
 
   render() {

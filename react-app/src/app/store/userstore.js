@@ -29,10 +29,13 @@ class UserStore extends EventEmitter {
   }
 
   add(user) {
-    user.id = this.users.length + 1;
-    this.users.push(user);
-    console.log('Users Count ' + this.users.length);
-    this.emit(Constants.Events.USER_CHANGE);
+    var store = this;
+    axios.put('http://localhost:8000/user', {user: user})
+    .then(response => {
+      console.log("Response " + response.data.message);
+      this.users = response.data.users;
+      this.emit(Constants.Events.USER_CHANGE);
+    });
   }
 
   handleActions(params) {

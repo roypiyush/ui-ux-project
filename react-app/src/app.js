@@ -60,8 +60,21 @@ app.get('/user/:id', function (req, res) {
     res.send(users[req.params.id])
   }
   else {
-    res.header('application/json').status(404).send({ message: 'Resource not found' });
+    res.status(404).send({ message: 'Resource not found' });
   }
+});
+
+app.put('/user', function(req, res) {
+  var user = {
+    id: users.length + 1,
+    fname: req.body.user.fname,
+    lname: req.body.user.lname,
+    email: req.body.user.email,
+    age: req.body.user.age
+
+  }
+  users.push(user);
+  res.status(200).send({ message: 'Successfully Save User', users: users});
 });
 
 app.listen(8000, () => console.log('Application started on http://localhost:8000'))
