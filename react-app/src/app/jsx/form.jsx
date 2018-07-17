@@ -75,7 +75,7 @@ class Form extends React.Component {
     return (
       <div className={this.props.className}>
         <form>
-          <h3 className='text-center'><label>Please fill up form</label></h3>
+          <h3 className='text-center'><label>Hi There, Tell me about yourself.</label></h3>
           {
             rows.map((r) =>
               <FormField
