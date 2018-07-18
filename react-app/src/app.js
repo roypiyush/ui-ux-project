@@ -31,7 +31,6 @@ var users = [
 
 // View Engine
 app.set('view engine', 'ejs')
-console.log(path.join(__dirname, 'views'));
 app.set('views', path.join(__dirname, 'views'))
 app.use(validator());
 // Body Parser Middleware
@@ -39,7 +38,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // Set Static files path
-console.log(path.join(__dirname, '../dist'));
 app.use(express.static(path.join(__dirname, '../dist')))
 
 
@@ -76,5 +74,6 @@ app.put('/user', function(req, res) {
   users.push(user);
   res.status(200).send({ message: 'Successfully Save User', users: users});
 });
+
 
 app.listen(8000, () => console.log('Application started on http://localhost:8000'))
