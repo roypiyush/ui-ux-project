@@ -29,7 +29,7 @@ class App extends React.Component {
       </div>
     }
     return (
-      <div>
+      <div className='container'>
         {navigationBar()}
         {form()}
         {table()}
