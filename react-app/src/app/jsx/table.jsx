@@ -12,6 +12,10 @@ export default class Table extends React.Component {
 		this.registerUserStoreChangeEvent();
 	}
 
+	componentWillMount() {
+		Dispatcher.dispatch({action: Constants.Actions.GET_USERS});
+	}
+
 	registerUserStoreChangeEvent() {
 		UserStore.on(Constants.Events.USER_CHANGE, () => {
 			this.setState({

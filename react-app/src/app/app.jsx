@@ -4,15 +4,39 @@ import Table from './jsx/table.jsx';
 import NavigationBar from './jsx/navbar.jsx';
 
 class App extends React.Component {
+
+	constructor(props) {
+		super(props);
+    this.state = {
+      currentTab: "addUser",
+      bars:[
+        { id: 'addUser', name: 'Add User'},
+        { id: 'listUser', name: 'List Users'},
+        { id: 'printUser', name: 'Print Users' }
+      ]
+    }
+    console.log("constructor called");
+  }
+
+  componentWillMount() {
+    console.log("Component to mount " + window.location.hash );
+    this.state.bars.map((b) => {
+      if (!window.location.hash) {
+        if (b.id === "addUser") {
+          b.className = "active";
+        }
+      }
+      else if (window.location.hash && b.id === window.location.hash.substr(1)) {
+        b.className = "active";
+      }
+    });
+    this.setState(this.state);
+  }
   render() {
 
     var navigationBar = () => {
       return (
-        <div><NavigationBar bars={[
-          { id: 'addUser', name: 'Add User', className: 'active'},
-          { id: 'listUser', name: 'List Users'},
-          { id: 'printUser', name: 'Print Users' }
-        ]}
+        <div><NavigationBar bars={this.state.bars}
           name='User Management'
         /></div>
       )

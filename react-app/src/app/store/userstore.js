@@ -55,6 +55,9 @@ class UserStore extends EventEmitter {
       break;
       case Constants.Actions.GET_USER:
       break;
+      case Constants.Actions.GET_USERS:
+        userStore.getAllFromServer();
+        break;
       case Constants.Actions.UPDATE_USER:
       break;
       case Constants.Actions.DELETE_USER:
