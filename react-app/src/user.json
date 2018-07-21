@@ -1,0 +1,32 @@
+[
+  {
+    "fname": "John",
+    "lname": "Doe",
+    "email": "john.doe@email.com",
+    "age": 12
+  },
+  {
+    "fname": "Bob",
+    "lname": "Marley",
+    "email": "bob.marley@email.com",
+    "age": 32
+  },
+  {
+    "fname": "Sam",
+    "lname": "Lee",
+    "email": "sam.lee@email.com",
+    "age": 43
+  },
+  {
+    "fname": "Graham",
+    "lname": "Smith",
+    "email": "graham.smith@email.com",
+    "age": 23
+  },
+  {
+    "fname": "Sammy",
+    "lname": "Scout",
+    "email": "sammy.scout@email.com",
+    "age": 42
+  }
+]

@@ -3,31 +3,8 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var path = require('path')
 var validator = require('express-validator');
+var fs = require('fs');
 var app = express()
-
-var users = [
-  {
-    id: 1,
-    fname: 'John',
-    lname: 'Doe',
-    email: 'john.doe@email.com',
-    age: 12
-  },
-  {
-    id: 2,
-    fname: 'Bob',
-    lname: 'Marley',
-    email: 'bob.marley@email.com',
-    age: 32
-  },
-  {
-    id: 3,
-    fname: 'Sam',
-    lname: 'Lee',
-    email: 'sam.lee@email.com',
-    age: 43
-  }
-]
 
 // View Engine
 app.set('view engine', 'ejs')
@@ -40,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // Set Static files path
 app.use(express.static(path.join(__dirname, '../dist')))
 
+var users = JSON.parse(fs.readFileSync(path.join(__dirname, 'user.json'), 'utf8'));
 
 app.get('/', function (req, res) {
   res.render('index', {
@@ -55,7 +33,19 @@ app.get('/user/:id', function (req, res) {
   var index = req.params.id;
   var size = users.length;
   if (index < size) {
-    res.send(users[req.params.id])
+    res.send(users[index])
+  }
+  else {
+    res.status(404).send({ message: 'Resource not found' });
+  }
+});
+
+app.delete('/user/:id', function (req, res) {
+  var index = req.params.id;
+  var size = users.length;
+  if (index < size) {
+    users.splice(index - 1, 1);
+    res.status(200).send({message: "Successfully Deleted"});
   }
   else {
     res.status(404).send({ message: 'Resource not found' });
@@ -64,7 +54,6 @@ app.get('/user/:id', function (req, res) {
 
 app.put('/user', function(req, res) {
   var user = {
-    id: users.length + 1,
     fname: req.body.user.fname,
     lname: req.body.user.lname,
     email: req.body.user.email,

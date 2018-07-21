@@ -13,6 +13,7 @@ module.exports = {
     GET_USERS: 'getAllUsers'
   },
   Events: {
-    USER_CHANGE: 'userChange'
+    USER_CHANGE: 'userChange',
+    USER_DELETE: 'userDelete'
   }
 }
