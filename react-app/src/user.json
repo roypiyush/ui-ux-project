@@ -28,5 +28,35 @@
     "lname": "Scout",
     "email": "sammy.scout@email.com",
     "age": 42
+  },
+  {
+    "fname": "Elys",
+    "lname": "Pat",
+    "email": "elys.pat@email.com",
+    "age": 87
+  },
+  {
+    "fname": "Ralph",
+    "lname": "Washington",
+    "email": "ralph_washington@myschool.edu",
+    "age": 64
+  },
+  {
+    "fname": "Connie",
+    "lname": "Williams",
+    "email": "cwilliams@myschool.edu",
+    "age": 54
+  },
+  {
+    "fname": "Patricia",
+    "lname": "Wong",
+    "email": "pwong@myschool.edu",
+    "age": 58
+  },
+  {
+    "fname": "Billy",
+    "lname": "Martinez",
+    "email": "bmartinez@myschool.edu",
+    "age": 36
   }
 ]
