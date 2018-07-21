@@ -38,6 +38,14 @@ class UserStore extends EventEmitter {
     });
   }
 
+  update(id, user) {
+    axios.post('http://localhost:8000/user', {user: user, id: id})
+    .then(response => {
+      this.users = response.data.users;
+      this.emit(Constants.Events.USER_CHANGE);
+    });
+  }
+
   delete(id) {
     axios.delete('http://localhost:8000/user/' + id)
     .then(response => {
@@ -59,6 +67,7 @@ class UserStore extends EventEmitter {
         userStore.getAllFromServer();
         break;
       case Constants.Actions.UPDATE_USER:
+        userStore.delete();
       break;
       case Constants.Actions.DELETE_USER:
         var id = params.object;

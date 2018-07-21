@@ -52,6 +52,17 @@ app.delete('/user/:id', function (req, res) {
   }
 });
 
+app.post('/user', function(req, res) {
+  var index = req.params.id;
+  users[index] = {
+    fname: req.body.user.fname,
+    lname: req.body.user.lname,
+    email: req.body.user.email,
+    age: req.body.user.age
+  }
+  res.status(200).send({ message: 'Successfully Updated User', users: users});
+});
+
 app.put('/user', function(req, res) {
   var user = {
     fname: req.body.user.fname,
@@ -61,7 +72,7 @@ app.put('/user', function(req, res) {
 
   }
   users.push(user);
-  res.status(200).send({ message: 'Successfully Save User', users: users});
+  res.status(200).send({ message: 'Successfully Saved User', users: users});
 });
 
 

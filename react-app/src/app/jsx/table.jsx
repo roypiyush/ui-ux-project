@@ -24,13 +24,14 @@ export default class Table extends React.Component {
 		});
 	}
 
-	registerUserEditEvent() {
-
-	}
-
 	handleDeleteClick(id) {
 		Dispatcher.dispatch({action: Constants.Actions.DELETE_USER, object: id});
 	}
+
+	handleUpdateClick(id, user) {
+		Dispatcher.dispatch({action: Constants.Actions.UPDATE_USER, object: id, user: user});
+	}
+
 	render() {
 		return (
 			<div>
