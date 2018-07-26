@@ -53,10 +53,10 @@ export default class Table extends React.Component {
 									<td className='text-center'>{r.email}</td>
 									<td className='text-center'>{r.age}</td>
 									<td className='text-center'>
-										<a href='#'><img width="24" height="24" src="/app/icons/icons8-pencil-30.png" /></a>
+										<a href='#'>Edit</a>
 									</td>
 									<td className='text-center'>
-										<a href='#' onClick={(e) => this.handleDeleteClick(id, e)}><img width="24" height="24" src="/app/icons/icons8-close-window-24.png"/></a>
+										<a href='#' onClick={(e) => this.handleDeleteClick(id, e)}>Delete</a>
 									</td>
 								</tr>
 							)
